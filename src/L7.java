@@ -1,5 +1,9 @@
 import java.text.DecimalFormat;  //importing the class from the package
-
+/*
+import java.text.*;
+^can be beneficial, but it takes a ton of RAM to load it
+it loads the entirety of the java.text class.
+ */
 public class L7{
 
     public static void main(String[] args){
@@ -21,7 +25,19 @@ public class L7{
 
         //METHOD 2: OUTPUT BY CALLING THE METHOD IN THE PRINTLN COMMAND
 
-        //using the roundTo2 object to call the format method from the DecimalFormat class.
+        //using the roundTo3 object to call the format method from the DecimalFormat class.
         System.out.println("The number rounded to 3 decimals is " + roundTo3.format(number));
+
+        DecimalFormat currency = new DecimalFormat("$#,###.00");
+        System.out.println("You have " + currency.format(number) + ".");
+        System.out.println("You have " + currency.format(643789562.87) + ".");
+
+        DecimalFormat percentage = new DecimalFormat("0%");
+        System.out.println("Sales tax is " + percentage.format(number));
+
+        DecimalFormat crazy = new DecimalFormat("This is a lotta money $#, ###.00");
+        System.out.println("Wait... " + crazy.format(number*1000));
+
+        System.out.println(currency.format(500*1.05));
     }
 }
