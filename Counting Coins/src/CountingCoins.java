@@ -6,13 +6,15 @@ public class CountingCoins {
      */
 
     public static void main(String[] args) {
-        int cents = 659704367;
+        double cents = 659704367.55;
         double dollars = cents/100.00;
+
+        //Casting: (int)cents will be 659704367
 
         int change = 0;
 
-        int quarters = cents/25;
-        change = cents % 25;
+        int quarters = (int)cents/25;
+        change = (int)cents % 25;
 
         int dimes = change / 10;
         change = change % 10;
